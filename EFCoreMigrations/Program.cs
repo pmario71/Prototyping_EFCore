@@ -5,9 +5,12 @@ Console.WriteLine("Executing!");
 
 var cmdline = Environment.CommandLine;
 
+using var dbCtx = new ApplicationDbContext();
+
+
 if (cmdline.Contains("list", StringComparison.OrdinalIgnoreCase))
 {
-    using var dbCtx = new ApplicationDbContext();
+    
     foreach (var item in dbCtx.Blogs)
     {
         Console.WriteLine(item);
@@ -20,8 +23,6 @@ if (cmdline.Contains("list", StringComparison.OrdinalIgnoreCase))
 } 
 else if (cmdline.Contains("insert", StringComparison.OrdinalIgnoreCase))
 {
-    using var dbCtx = new ApplicationDbContext();
-
     var b = new Blog() { Rating = 4, Url = $"dummy url {DateTime.Now.TimeOfDay}" };
     dbCtx.Blogs.Add(b);
 

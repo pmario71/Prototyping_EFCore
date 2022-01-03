@@ -27,6 +27,8 @@ namespace EFCoreMigrations.Model
         public string Title { get; set; }
         public string Content { get; set; }
 
+        public DateTime TimeStamp { get; set; } = DateTime.Now;
+
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
     }
