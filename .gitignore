@@ -2,3 +2,4 @@
 /.vs
 /EFCoreMigrations/bin/Debug/net6.0
 /EFCoreMigrations/obj
+/EFCoreMigrations/migrationsTest.db
